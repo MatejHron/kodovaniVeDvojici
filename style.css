@@ -158,7 +158,7 @@ background-size: cover;
 .whatWeDoPage {
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  height: 70vh;
   width: auto;
   border: 3px solid red;
   background-color: #33292A;
@@ -244,8 +244,18 @@ background-size: cover;
   flex-direction: row;
 }
 .icon{
-  height: 120px;
+  flex-direction: column;
+  height: 160px;
   width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
-  background-color: teal;
+  font-size: 23px;
+  font-weight:600 ;
+  color: white;
+}
+svg{
+height: 60px;
+width: 60px;
 }
