@@ -10,6 +10,12 @@
   --img9: url(imagesForTripsPage/julian-bialowas-ilkTnuMunP8-unsplash.jpg);
   --img10: url(imagesForTripsPage/reviews1.jpg);
   --img11: url(imagesForTripsPage/reviews2.jpg);
+  --img12: url(imagesForTripsPage/footer1.jpg);
+  --img13: url(imagesForTripsPage/footer2.jpg);
+  --img14: url(imagesForTripsPage/footer3.jpg);
+  --img15: url(imagesForTripsPage/footer4.jpg);
+
+
 }
 body {
   margin: 0;
@@ -87,6 +93,10 @@ body {
   margin-bottom: 30px;
   background-color: #ddd;
 }
+.image12 { background-image: var(--img12); }
+.image13 { background-image: var(--img13); }
+.image14 { background-image: var(--img14); }
+.image15{ background-image: var(--img15); }
 
 .image11 {
   background: var(--img11);
@@ -175,8 +185,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.content1 {
-}
+
 
 .whatWeDoPage {
   display: flex;
@@ -193,7 +202,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: auto;
   width: auto;
   border: 3px solid red;
 }
@@ -215,10 +224,11 @@ body {
 }
 
 .picsPage {
-  height: 100vh;
+  height: auto;
   width: auto;
   border: 3px solid red;
 }
+
 
 .content1 {
   display: flex;
@@ -359,3 +369,66 @@ svg {
   font-weight: 700;
   margin-bottom: 0;
 }
+
+
+
+.picsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.picsImage {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer {
+  background-color: #333;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 0.85rem;
+}
+
+.footerContact {
+  margin: 5px 0;
+  color: #bc776d;
+  text-decoration: underline;
+  font-weight: 700;
+
+}
+
+.footerCopy {
+  color: white;
+}
+@media (max-width: 400px) {
+  .whereToGoPage {
+    padding: 20px;
+  }
+
+  .whereToGoContainer {
+    flex-direction: column;
+    width: 90%;
+    gap: 25px;
+  }
+
+  .whereToGoLeft h2 {
+    font-size: 2rem;
+    margin-left: 0;
+  }
+  .reviewsGrid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .picsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .picsImage {
+    height: 300px;
+    width: auto;
+  }
+}
+
