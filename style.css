@@ -14,15 +14,42 @@
   --img13: url(imagesForTripsPage/footer2.jpg);
   --img14: url(imagesForTripsPage/footer3.jpg);
   --img15: url(imagesForTripsPage/footer4.jpg);
-
-
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
 
   font-family: "Inter", sans-serif;
 }
+.hamburger {
+  visibility: hidden;
+  position: absolute;
+  top: 0px;
+  right: 10px;
 
+  width: 80px;
+  height: auto;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.navbar a:visited,
+.navbar a:active {
+  color: white;
+}
 /*styles for Trips page--------------------------------------------------*/
 
 .main {
@@ -92,10 +119,18 @@ body {
   margin-bottom: 30px;
   background-color: #ddd;
 }
-.image12 { background-image: var(--img12); }
-.image13 { background-image: var(--img13); }
-.image14 { background-image: var(--img14); }
-.image15{ background-image: var(--img15); }
+.image12 {
+  background-image: var(--img12);
+}
+.image13 {
+  background-image: var(--img13);
+}
+.image14 {
+  background-image: var(--img14);
+}
+.image15 {
+  background-image: var(--img15);
+}
 
 .image11 {
   background: var(--img11);
@@ -112,7 +147,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: xx-large;  
+  font-size: xx-large;
   font-weight: 700;
   background-color: rgb(233, 233, 232);
   background-image: none;
@@ -131,22 +166,25 @@ body {
   overflow: hidden;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
+
+
+
   .main {
     grid-template-columns: repeat(1, 300px);
-    grid-template-rows: repeat(9, 300px);
+    
+    grid-template-rows: 250px 250px 250px 250px 100px 250px 250px 250px 250px ;
+    gap: 10px;
+  
     width: 300px;
     position: relative;
-    gap: 0px;
+    
   }
   .image {
     width: 300px;
     height: 250px;
   }
-  .image5 {
-    line-height: 250px;
-    grid-area: 1/1;
-  }
+  
 }
 /*-----------------------------------------------------------------------------*/
 .navbar {
@@ -163,16 +201,11 @@ body {
   list-style: none;
 }
 
-
-
-
-
 .homePage {
   min-height: calc(100vh - 80px);
   background: url(fotky/yourTravelAssisstant.jpg) center / cover no-repeat;
   margin-top: 0;
   width: auto;
-  border: 3px solid red;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -183,13 +216,14 @@ body {
   align-items: center;
   height: 50vh;
   width: auto;
-  border: 3px solid red;
 }
 .left {
   width: 50%;
   overflow: hidden;
-  
-  font-size: clamp(9px, 2vw, 15px);
+
+  line-height: 1.6;
+
+  font-size: clamp(5px, 2vw, 10px);
   margin-right: 10px;
 }
 .right {
@@ -200,13 +234,11 @@ body {
   background-size: cover;
 }
 
-
 .whatWeDoPage {
   display: flex;
   flex-direction: column;
   height: auto;
   width: auto;
-  border: 3px solid red;
   background-color: #33292a;
   justify-content: center;
   align-items: center;
@@ -216,9 +248,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto;
+  height: 100vh;
   width: auto;
-  border: 3px solid red;
 }
 
 .whereToGoPage {
@@ -226,13 +257,11 @@ body {
   height: auto;
   min-height: auto;
   width: auto;
-  border: 3px solid red;
 }
 
 .reviewPage {
   height: auto;
   width: auto;
-  border: 3px solid red;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -240,9 +269,7 @@ body {
 .picsPage {
   height: auto;
   width: auto;
-  border: 3px solid red;
 }
-
 
 .content1 {
   display: flex;
@@ -358,7 +385,6 @@ svg {
   text-align: center;
 }
 
-
 .reviewsGrid {
   display: flex;
   justify-content: space-between;
@@ -386,8 +412,6 @@ svg {
   margin-bottom: 0;
 }
 
-
-
 .picsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -412,15 +436,12 @@ svg {
   color: #bc776d;
   text-decoration: underline;
   font-weight: 700;
-
 }
 
 .footerCopy {
   color: white;
 }
-.hamburger {
-  display: none;
-}
+
 @media (max-width: 768px) {
   .whereToGoPage {
     padding: 20px;
@@ -450,7 +471,6 @@ svg {
     width: auto;
   }
 }
-
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .navbar li {
@@ -510,6 +530,7 @@ svg {
     max-width: 900px;
     margin: 0 auto;
     gap: 15px;
+    margin-top: 20px;
   }
 
   .image {
@@ -525,7 +546,7 @@ svg {
     margin-right: auto;
   }
 
-   .whereToGoLeft h2 {
+  .whereToGoLeft h2 {
     margin-left: 0px;
   }
 
@@ -538,3 +559,97 @@ svg {
     gap: 40px;
   }
 }
+
+/*phone queries*/
+
+@media (max-width: 750px) {
+  .image5 {
+    line-height: 100px;
+    height: 100px;
+    
+  }
+    .TripsPage{
+height: 250vh;
+  }
+  .aboutPage {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content1 {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    position:relative;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  .left {
+    width: 300px;
+    height: 300px;
+  }
+  .right {
+    width: 300px;
+    height: 300px;
+  }
+
+  .homePage {
+    background-position: 70% center;
+  }
+
+  a {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .icon {
+    margin-top: 20px;
+  }
+  .iconsDiv {
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .whatWeDoPage {
+    height: 140vh;
+  }
+  .whatWeDoDiv {
+    height: 400px;
+  }
+  .icon {
+  }
+
+  .hamburger {
+    visibility: visible;
+  }
+  .navbar {
+    transition: all 0.5s ease;
+  }
+
+  .opened {
+    transition: height 0.5s ease;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 300px;
+  }
+  .aopened {
+    transition: all 0.5s ease;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+}
+
+/**/
