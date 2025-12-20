@@ -15,6 +15,7 @@
   --img14: url(imagesForTripsPage/footer3.jpg);
   --img15: url(imagesForTripsPage/footer4.jpg);
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -49,14 +50,11 @@ body {
 } /*styles for Trips page--------------------------------------------------*/
 .main {
   display: grid;
-  grid-template-columns: repeat(3, 230px);
-  grid-template-rows: repeat(3, 200px);
-  margin: 0 auto;
-  width: 800px;
-  height: 800px;
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  height: auto;
-  padding: 0;
+  width: 60%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .image {
   display: block;
@@ -178,15 +176,15 @@ body {
 .aboutPage {
   display: flex;
   align-items: center;
-  height: 50vh;
+  height: auto;
   width: auto;
 }
 .left {
   width: 50%;
   overflow: hidden;
   line-height: 1.6;
-  font-size: clamp(5px, 2vw, 10px);
-  margin-right: 10px;
+  font-size: 18px;
+    margin-right: 10px;
 }
 .right {
   width: 50%;
@@ -230,24 +228,25 @@ body {
 .content1 {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-  width: 40%;
-  height: 70%;
+  margin: 40px auto;
+  width: 60%;
+  height: auto;
 }
+
 .whatWeDoDiv {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
   height: 50%;
   overflow: hidden;
   color: white;
 }
 .iconsDiv {
   height: 50%;
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -416,29 +415,27 @@ svg {
   }
 
   .whereToGoPage {
-    padding: 20px;
+    padding: 0px;
   }
-
   .whereToGoContainer {
-    flex-direction: column;
     width: 90%;
-    gap: 25px;
+    margin-left: 10px; 
+    gap: 50px;
   }
 
   .whereToGoLeft h2 {
-    font-size: 2rem;
-    margin-left: 0;
+    font-size: 3rem;
   }
+
+  .reviewContainer {
+    width: 90%;
+   }
 
   .reviewsGrid {
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: row;  
+    gap: 80px;
   }
-
-  .picsGrid {
-    grid-template-columns: 1fr;
-  }
-
+  
   .picsImage {
     height: 300px;
     width: auto;
@@ -477,7 +474,7 @@ svg {
 
   .content1 {
     width: 85%;
-    height: 60vh;
+    height: auto;
     
   }
   .left{
@@ -499,7 +496,7 @@ svg {
 
   .TripsPage {
     padding: 60px 20px;
-    height: 120vh;
+    height: auto;
   }
 
   .main {
@@ -520,29 +517,9 @@ svg {
     font-size: 36px;
     letter-spacing: 1px;
   }
-
-  .whereToGoContainer {
-    margin-left: 6%;
-    margin-right: auto;
-  }
-
-  .whereToGoLeft h2 {
-    margin-left: 0px;
-  }
-
-  .reviewContainer {
-    width: 90%;
-    max-width: none;
-  }
-
-  .reviewsGrid {
-    gap: 40px;
-  }
 }
 /*phone queries*/
 @media (max-width: 768px) {
-  
-
   
   .image5 {
     line-height: 100px;
@@ -605,8 +582,6 @@ svg {
   .whatWeDoDiv {
     height: 400px;
   }
-  .iconsDiv{
-  }
   .hamburger {
     visibility: visible;
     top: 10px;
@@ -652,6 +627,51 @@ svg {
     height: 100px;
     line-height: 100px;
   }
-}
+  .reviewsGrid {
+    flex-direction: column;  
+    gap: 40px;
+    align-items: center;
+  }
+  .reviewIntro {
+    width: 100%;
+  }
 
+  .reviewItem {
+    width: 100%;
+  }
+  .picsGrid {
+    grid-template-columns: 1fr;  
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .picsImage {
+    height: 300px; 
+  }
+  .whereToGoContainer {
+    display: flex;
+    flex-direction: column;
+    /* Místo width: 100% použijeme 'auto', aby se padding nepřičítal k šířce */
+    width: auto; 
+    padding: 24px;
+    gap: 24px;
+    margin: 0;
+    /* Aplikujeme border-box jen na tento kontejner */
+    box-sizing: border-box; 
+  }
+  
+  .whereToGoLeft h2 {
+    margin: 0 0 20px 0;
+    font-size: 2.1rem;
+    line-height: 1.25;
+    text-align: left;
+  }
+  .whereToGoRight p {
+    width: 100%;
+    margin: 0 0 20px 0;
+    /* Zamezí přetečení textu u velmi dlouhých slov */
+    overflow-wrap: break-word; 
+  }
+  
+}
 /*-----------------------------------------------------------------------------*/
